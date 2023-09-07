@@ -18,7 +18,7 @@ public class ControllerSocket {
     }
 
     @MessageMapping("chat.addUser")
-    @SendTo("/enablebroker/public")
+    @SendTo("/enablebroker/public")//se enviara a esta ruta el resultado del metodo en este caso es un modelchat
     public ModelChat addUser(ModelChat message, SimpMessageHeaderAccessor accessor){
         //agregando el usuario
         accessor.getSessionAttributes().put("username", message.getSender());
